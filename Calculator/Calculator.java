@@ -8,14 +8,16 @@ public class Calculator {
         System.out.print("Enter your first number: ");
         if (!scanner.hasNextDouble()) { // check that the answer is a double
             System.out.println("Error: Please enter a valid number."); // error
-            return;
+            scanner.next(); // Consume the invalid input
+            return; // Exit the program
         }
         double num1 = scanner.nextDouble(); // set first num1 to the double enter
 
         System.out.print("Enter your second number: ");
         if (!scanner.hasNextDouble()) { // check that answer is a double
             System.out.println("Error: Please enter a valid number.");
-            return;
+            scanner.next(); // Consume the invalid input
+            return; // Exit the program
         }
         double num2 = scanner.nextDouble(); // set second num2 to the double entered
 
@@ -29,15 +31,15 @@ public class Calculator {
                 result = num1 + num2;
                 System.out.println("Result: " + result);
                 break;
-            case "-": // if subtractio
+            case "-": // if subtraction
                 result = num1 - num2;
                 System.out.println("Result: " + result);
                 break;
-            case "*": //  if multiplication
+            case "*": // if multiplication
                 result = num1 * num2;
                 System.out.println("Result: " + result);
                 break;
-            case "/": //  if division
+            case "/": // if division
                 if (num2 == 0) { // check for dividing by 0
                     System.out.println(
                         "Error: Division by zero is not allowed."
@@ -51,10 +53,11 @@ public class Calculator {
                 result = Math.pow(num1, num2); // exponent
                 System.out.println("Result: " + result);
                 break;
-            default: // if it doesnt fit into any of the cases
+            default: // if it doesn't fit into any of the cases
                 System.out.println(
                     "Error: Invalid operation. Please enter one of +, -, *, /, ^."
                 );
         }
         scanner.close(); // close the scanner
+    }
 }
