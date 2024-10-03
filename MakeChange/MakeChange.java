@@ -1,13 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class MakeChange {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Double> prices = new ArrayList<>(); // list of prices
         double total = 0.0; // total price after all the itmes
-
         System.out.println("Enter the price of items or 'd' when done:");
         while (true) { // until someone enters d
             System.out.print("Price: ");
@@ -26,16 +23,12 @@ public class MakeChange {
                 }
             }
         }
-
         System.out.print("How much money was given: ");
-        double moneyGiven = (int) Math.round(scanner.nextDouble()*100); // total money given
-
-        int change = (int) Math.round((moneyGiven - total)*100);
-
-        System.out.println(change/100);
+        double moneyGiven = scanner.nextDouble(); // total money given
+        double change = moneyGiven - total;
+        System.out.println((int) Math.round(change * 100)/100);
         giveChange(change);
     }
-
     public static void giveChange(double change) {
         int[] denominations = {
             10000,
@@ -73,13 +66,10 @@ public class MakeChange {
             "nickels",
             "pennies",
         };
-
-        int remainingChange = change;
-
+        int remainingChange = (int) Math.round(change * 100); // cents
         for (int i = 0; i < denominations.length; i++) { // go through all prices
             int count = remainingChange / denominations[i];
             remainingChange %= denominations[i];
-
             if (count > 0) {
                 if (count == 1) {
                     System.out.println(count + " " + namesSingular[i]);
