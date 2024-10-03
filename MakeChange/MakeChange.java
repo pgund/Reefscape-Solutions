@@ -28,11 +28,11 @@ public class MakeChange {
         }
 
         System.out.print("How much money was given: ");
-        double moneyGiven = scanner.nextDouble(); // total money given
+        double moneyGiven = (int) Math.round(scanner.nextDouble()*100); // total money given
 
-        double change = moneyGiven - total;
+        int change = (int) Math.round((moneyGiven - total)*100);
 
-        System.out.println(change);
+        System.out.println(change/100);
         giveChange(change);
     }
 
@@ -74,7 +74,7 @@ public class MakeChange {
             "pennies",
         };
 
-        int remainingChange = (int) Math.round(change * 100); // cents
+        int remainingChange = change;
 
         for (int i = 0; i < denominations.length; i++) { // go through all prices
             int count = remainingChange / denominations[i];

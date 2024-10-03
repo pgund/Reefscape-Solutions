@@ -9,7 +9,7 @@ public class HighLowGuessingGameHumanGuesses {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random(); // random number generator
 
-        int number = random.nextInt(100) + 1; // guess number
+        int number = random.nextInt(99) + 1; // guess number
         int guesses = 0; // number of guesses
         int guess = 0; // guess
 

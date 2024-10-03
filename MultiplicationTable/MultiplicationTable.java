@@ -1,7 +1,7 @@
 public class MultiplicationTable {
 
     public static void main(String[] args) {
-        int size = 12; // size of the multiplication table (you can change this to make the multiplication table shorter or longer)
+        int size = 15; // size of the multiplication table (you can change this to make the multiplication table shorter or longer)
         printTable(size);
     }
 

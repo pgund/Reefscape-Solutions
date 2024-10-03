@@ -35,11 +35,13 @@ public class HighLowGuessingGameComputerGuesses {
                 } else if (response.equals("lower")) {
                     high = guess - 1;
                 }
-            } else {
+            } else if (response.equals("yes")){
                 System.out.println(
                     "I guessed your number in " + guesses + " tries!"
                 );
                 break;
+            } else {
+                System.out.println("Enter yes or no");
             }
         }
         scanner.close();
